@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>define</title>
+  <script src="./index.js"></script>
+</head>
+<body>
+  <p>自定义KVue</p>
+  <script>
+    const app = new KVue({
+      data: {
+        test: 'I am steven',
+        foo: {
+          bar: 'bar'
+        }
+      }
+    })
+    app.$data.test = 'hello my KVue'
+    app.$data.foo.bar = 'steven'
+  </script>
+</body>
+</html>
