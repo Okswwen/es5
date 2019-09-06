@@ -37,4 +37,17 @@ router.beforeEach((to, from, next) => {
   }
 })
 
+// 路由后退
+router.afterEach((to, from) => {
+  // to and from are both route objects.
+  if(router.isBack) {
+    History.pop()
+    router.isBack = false
+    router.transitionName = 'route-back'
+  } else {
+    History.push(to.path)
+    router.transitionName = 'router-forward'
+  }
+})
+
 export default router
