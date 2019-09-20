@@ -15,8 +15,9 @@ const dups_names = ['Ron', 'Pal', 'Fred', 'Rongo', 'Ron']
 function dups_array(dups_names) {
 let unique = {};
 names.forEach(function(i) {
-    If (!unique[i]) {
-      unique[i] = true   }
+  If (!unique[i]) {
+    unique[i] = true   
+  }
   });
 return Object.keys(unique)}   // Ron, Pal, Fred, Rongo
 Dups_array(names)
