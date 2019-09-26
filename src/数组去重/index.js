@@ -21,3 +21,18 @@ names.forEach(function(i) {
   });
 return Object.keys(unique)}   // Ron, Pal, Fred, Rongo
 Dups_array(names)
+
+// 使用indexOf
+
+const array = [1, 2, 1, '1']
+
+const unique = (arr) => {
+  let res = []
+  for(let i = 0; i < arr.length; i++){
+    let current = arr[i]
+    if(res.indexOf(current) === -1) {
+      res.push(current)
+    }
+  }
+  return res
+}
