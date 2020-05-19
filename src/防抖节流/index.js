@@ -4,10 +4,10 @@
 */
 
 const debounce = (fn, wait = 500) => {
-  let timeout = null // 放置定时器的返回值
+  let timer = null // 放置定时器的返回值
   return function() {
-    clearTimeout(timeout) // 清空定时器，防止内存泄漏
-    timeout = setTimeout(() => { // 创建新的setTimeout，输入字符在wait的interval（时间间隔）内，不会执行fn
+    if(timer) clearTimeout(timer) // 清空定时器，防止内存泄漏
+    timer = setTimeout(() => { // 创建新的setTimeout，输入字符在wait的interval（时间间隔）内，不会执行fn
       fn.apply(this, arguments)
     }, wait)
   }

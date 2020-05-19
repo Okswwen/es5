@@ -58,4 +58,27 @@ console.log(JSON.stringify(onlyName))
 
 即可，过滤读取到自己想要的数组
 
+
+如果有一份数据，想要添加到数组中，
+var points = {
+  HarryPotter: 500,
+  CedricDiggory: 750,
+  RonaldWeasley: 100,
+  HermioneGranger: 1270
+};
+
+const wizardWithPoint = wizards.reduce((arr, currentItem) => {
+  let key = currentItem.name.replace(' ', '') // 移除空格
+  if(points[key]) {
+    currentItem.point = points[key]
+  } else {
+    currentItem.point = 0
+  }
+  // 删除name属性
+  delete currentItem.name
+   
+  arr.push(currentItem)
+  return arr
+}, [])
+
 ```

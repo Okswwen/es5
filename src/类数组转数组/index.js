@@ -8,4 +8,4 @@ Array.prototype.slice.call(arguments)
 Array.from() // es6
 
 // 方法三,常用于对象转换
-[...arguments]
+// [...arguments]

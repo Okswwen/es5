@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>单例模式</title>
+  <style>
+    .model {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      margin-left: -150px;
+      border: 2px solid #f60;
+      width: 300px;
+      height: 200px;
+
+    }
+  </style>
+</head>
+<body>
+  <div id="btn">这是个弹框</div>
+  <script>
+    var singleModel = singleM(creatSingleModel)
+    const btn = document.getElementById('btn')
+    // 点击触发弹框
+    btn.onclick = function() {
+      let model = singleModel()
+      model.style.display = 'block'
+    }
+    // 创建弹框
+    function creatSingleModel() {
+      console.log('点击了弹框')
+      const modelWrap = document.createElement('div')
+      modelWrap.innerHTML="tankuang"
+      modelWrap.className = 'model'
+      modelWrap.style.display = 'none'
+      modelWrap.addEventListener('click', function() {
+        modelWrap.style.display = 'none'
+      })
+      document.body.appendChild(modelWrap)
+      return modelWrap
+    }
+    // 创建单例模式
+    function singleM(fn) {
+      let result
+      return function() {
+        return result || (result = fn.apply(this, arguments))
+      }
+    }
+  </script>
+</body>
+</html>

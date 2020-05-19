@@ -12,3 +12,41 @@
 // splice(start, number, value...): 返回删除元素组成的数组，value 为插入项，改变原数组
 // indexOf / lastIndexOf(value, fromIndex): 查找数组项，返回对应的下标
 // reduce / reduceRight(fn(prev, cur)， defaultPrev): 两两执行，prev 为上次化简函数的return值，cur 为当前值(从第二项开始)
+
+const arr = [1, 2, 3, 4, [1, 2, 3, [1, 2, 3, [1, 2, 3]]], 5, "string", { name: "弹铁蛋同学" }];
+// 遍历数组的方法有太多，本文只枚举常用的几种
+// for 循环
+for (let i = 0; i < arr.length; i++) {
+  console.log(arr[i]);
+}
+// for...of
+for (let value of arr) {
+  console.log(value);
+}
+// for...in
+for (let i in arr) {
+  console.log(arr[i]);
+}
+// forEach 循环
+arr.forEach(value => {
+  console.log(value);
+});
+// entries（）
+for (let [index, value] of arr.entries()) {
+  console.log(value);
+}
+// keys()
+for (let index of arr.keys()) {
+  console.log(arr[index]);
+}
+// values()
+for (let value of arr.values()) {
+  console.log(value);
+}
+// reduce()
+arr.reduce((pre, cur) => {
+  console.log(cur);
+}, []);
+// map()
+arr.map(value => console.log(value));
+
